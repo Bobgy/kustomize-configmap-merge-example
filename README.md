@@ -1,6 +1,6 @@
 References:
 * Use `envFrom` to turn key value pairs in a configmap directly as environment variables: https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#configure-all-key-value-pairs-in-a-configmap-as-container-environment-variables
-* 
+* Use configMapGenerator's behavior:merge to merge different params.env files.
 
 kubectl kustomize base:
 ```
