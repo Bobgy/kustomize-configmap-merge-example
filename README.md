@@ -29,13 +29,13 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: nginx:1.14.2
+      - envFrom:
+        - configMapRef:
+            name: example-configmap-f68btk86bd
+        image: nginx:1.14.2
         name: nginx
         ports:
         - containerPort: 80
-      envFrom:
-      - configMapRef:
-          name: example-config
 ```
 
 kubectl kustomize overlays/patched:
@@ -68,11 +68,11 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: nginx:1.14.2
+      - envFrom:
+        - configMapRef:
+            name: example-configmap-269kt2fkkt
+        image: nginx:1.14.2
         name: nginx
         ports:
         - containerPort: 80
-      envFrom:
-      - configMapRef:
-          name: example-config
 ```
